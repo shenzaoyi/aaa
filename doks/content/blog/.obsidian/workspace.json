@@ -1,0 +1,240 @@
+{
+  "main": {
+    "id": "d016e5f7f132b6f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "57fdac9e46510590",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d513b7b349efacdb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/长分享.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "长分享"
+            }
+          },
+          {
+            "id": "1d270168e0bba541",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/leetcode.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "leetcode"
+            }
+          },
+          {
+            "id": "489fea75ac656684",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/leetcode.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "leetcode"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "85f98b33ddf935de",
+    "type": "split",
+    "children": [
+      {
+        "id": "bf48be48d61b86b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee9ed12a471c2a4b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "5f7bb61986fee980",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "7f280e88d35b2b05",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "62ce51de39d4dbe0",
+    "type": "split",
+    "children": [
+      {
+        "id": "8df84f9da4eca3b1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74c7464969a26b0a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/长分享.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "长分享 的反向链接列表"
+            }
+          },
+          {
+            "id": "ce71aea87217526d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/长分享.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "长分享 的出链列表"
+            }
+          },
+          {
+            "id": "d649cf517cc3fbac",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "e899b7a02b7fd3fe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/长分享.md"
+              },
+              "icon": "lucide-list",
+              "title": "长分享 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "random-note:开始漫游笔记": false
+    }
+  },
+  "active": "489fea75ac656684",
+  "lastOpenFiles": [
+    "notes/algorithm.md",
+    "notes/Android.md",
+    "notes/leetcode.md",
+    "notes/os lab设计.md",
+    "language/cpp.md",
+    "notes/长分享.md",
+    "notes/cheat engine.md",
+    "notes/temp.md",
+    "notes/ELF.md",
+    "notes/未命名.md",
+    "notes/网络.md",
+    "notes/软件体系结构.md",
+    "notes/企业微信接收消息机器人.md",
+    "notes/matplotlib.md",
+    "notes/csapp.md",
+    "notes/cpp.md",
+    "language/Go.md",
+    "notes/NLP大模型.md",
+    "9ff586fa31ccd5a71ddaf07b40f4bbef.jpg",
+    "Pasted image 20240923225403.png",
+    "().md",
+    "_index.md",
+    "notes/虚拟机网络模式.md",
+    "Go 1.3+ Compiler Overhaul 1.pdf",
+    "Go 1.3+ Compiler Overhaul.pdf",
+    "meeting/Task.md",
+    "utils/linux.md",
+    "notes/Cource - wang.md",
+    "Pasted image 20240923221403.png",
+    "Pasted image 20240923212445.png",
+    "Pasted image 20240921170056.png",
+    "meeting/Go锁&木马.md",
+    "70dffd43d6ace861a226dc611058dbb1.gif",
+    "meeting",
+    "utils/something.md",
+    "剪藏",
+    "notes",
+    "utils",
+    "language",
+    "模板",
+    "莫van",
+    "新建文件夹"
+  ]
+}

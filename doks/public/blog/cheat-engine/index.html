@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/blog/cheat-engine/">
+  <link rel="canonical" href="http://localhost:1313/blog/cheat-engine/">
+<title>cheat engine  |  My Docs</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:title" content="cheat engine">
+<meta property="og:description" content="Tutorial 已知初始值的查找 未知初始值的查找 查找 float &amp; double 型数据 程序中变量位置动态变化的查找 tepm 指针（未完成） to be &hellip; 原理 查看内存块信息 跨进程读取 字符串模式匹配算法定位 源码解读 暴力搜索 DWORD AOBScan(HANDLE hProcess, const char* pattern, const char* mask, uint64_t start, uint64_t end, int inc, int protection,uint64_t * match_addr) { RegionInfo rinfo; uint64_t tmp = start; uint64_t tmp2 = tmp; char* MemoryBuff = (char*)malloc(4096); int patternLength = (int)strlen(mask); int result_count = 0; while (tmp &lt; end) { VirtualQueryEx(hProcess, (void*)tmp, &amp;rinfo, NULL); if (rinfo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/blog/cheat-engine/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2024-09-18T00:00:00+00:00">
+<meta property="article:modified_time" content="2024-09-18T00:00:00+00:00"><meta property="og:site_name" content="My Docs">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="cheat engine">
+<meta name="twitter:description" content="Tutorial 已知初始值的查找 未知初始值的查找 查找 float &amp; double 型数据 程序中变量位置动态变化的查找 tepm 指针（未完成） to be &hellip; 原理 查看内存块信息 跨进程读取 字符串模式匹配算法定位 源码解读 暴力搜索 DWORD AOBScan(HANDLE hProcess, const char* pattern, const char* mask, uint64_t start, uint64_t end, int inc, int protection,uint64_t * match_addr) { RegionInfo rinfo; uint64_t tmp = start; uint64_t tmp2 = tmp; char* MemoryBuff = (char*)malloc(4096); int patternLength = (int)strlen(mask); int result_count = 0; while (tmp &lt; end) { VirtualQueryEx(hProcess, (void*)tmp, &amp;rinfo, NULL); if (rinfo.">
+<meta name="twitter:site" content="@getdoks">
+
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "0 Error(s), 0 Wraning(s)",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/blog/",
+       "name": "Blogs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "name": "Cheat Engine",
+       "position": 3
+     }
+   ]
+ }
+</script>
+  
+	
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "cheat engine",
+      "description": "",
+      "isPartOf": {
+        "@id": "http://localhost:1313/blog/cheat-engine/"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://localhost:1313/blog/cheat-engine/"
+      },
+      "datePublished": "2024-09-18T00:00:00+00:00",
+      "dateModified": "2024-09-18T00:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "Hyas",
+        "url": "http://localhost:1313/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hyas"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+</head>
+
+  
+  <body class="single section blog" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">My Docs</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">My Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/docs/">Docs</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:1313/blog/" aria-current="true">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/shenzaoyi"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+<article>
+<div class="row justify-content-center">
+  <div class="col-md-12 col-lg-10">
+    <div class="blog-header">
+      <h1>cheat engine</h1>
+      <p>
+  <small>September 18, 2024&nbsp;in&nbsp;<a class="stretched-link position-relative link-muted" href="/categories/blog/">blog</a>&nbsp;by&nbsp;<a class="stretched-link position-relative" href="/contributors/shenzaoyi/">shenzaoyi</a><span class="stretched-link position-relative reading-time text-nowrap" title="Estimated reading time"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+        <path d="M12 7v5l3 3"></path>
+      </svg>2&nbsp;minutes</span></small>
+</p>
+
+    </div>
+  </div>
+  <div class="col-md-12 col-lg-9">
+    <h2 id="tutorial">Tutorial</h2>
+<ol>
+<li>已知初始值的查找</li>
+<li>未知初始值的查找</li>
+<li>查找 float &amp; double 型数据</li>
+<li>程序中变量位置动态变化的查找</li>
+<li>tepm</li>
+<li>指针（未完成）</li>
+<li>to be &hellip;</li>
+</ol>
+<h2 id="原理">原理</h2>
+<ol>
+<li>查看内存块信息</li>
+<li>跨进程读取</li>
+<li>字符串模式匹配算法定位</li>
+</ol>
+<h2 id="源码解读">源码解读</h2>
+<h2 id="暴力搜索">暴力搜索</h2>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">DWORD</span> <span class="nf">AOBScan</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hProcess</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">pattern</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mask</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">start</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">end</span><span class="p">,</span> <span class="kt">int</span> <span class="n">inc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">protection</span><span class="p">,</span><span class="kt">uint64_t</span> <span class="o">*</span> <span class="n">match_addr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">RegionInfo</span> <span class="n">rinfo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">uint64_t</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">uint64_t</span> <span class="n">tmp2</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span><span class="o">*</span> <span class="n">MemoryBuff</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="mi">4096</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">patternLength</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nf">strlen</span><span class="p">(</span><span class="n">mask</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">result_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">VirtualQueryEx</span><span class="p">(</span><span class="n">hProcess</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">tmp</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rinfo</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">rinfo</span><span class="p">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">((</span><span class="n">rinfo</span><span class="p">.</span><span class="n">protection</span> <span class="o">&amp;</span> <span class="n">protection</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tmp2</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">while</span> <span class="p">(</span><span class="n">tmp2</span> <span class="o">&lt;</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">rinfo</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">ReadProcessMemory</span><span class="p">(</span><span class="n">hProcess</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">tmp2</span><span class="p">,</span> <span class="n">MemoryBuff</span><span class="p">,</span> <span class="mi">4096</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4096</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">inc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span> 
+</span></span><span class="line"><span class="cl">					<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">patternLength</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">					<span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">						<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;?&#39;</span> <span class="o">||</span> <span class="n">pattern</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">MemoryBuff</span><span class="p">[</span><span class="n">k</span><span class="p">])))</span>
+</span></span><span class="line"><span class="cl">						<span class="p">{</span>
+</span></span><span class="line"><span class="cl">							<span class="k">goto</span> <span class="n">label</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">						<span class="p">}</span>
+</span></span><span class="line"><span class="cl">					<span class="p">}</span>
+</span></span><span class="line"><span class="cl">					<span class="n">match_addr</span><span class="p">[</span><span class="n">result_count</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">					<span class="n">result_count</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">					<span class="k">if</span> <span class="p">(</span><span class="n">result_count</span> <span class="o">&gt;=</span> <span class="n">MAX_HIT_COUNT</span><span class="p">)</span><span class="k">return</span> <span class="n">result_count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">					
+</span></span><span class="line"><span class="cl">				<span class="nl">label</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">					<span class="n">tmp2</span> <span class="o">+=</span> <span class="n">inc</span><span class="p">;</span> <span class="n">MemoryBuff</span> <span class="o">+=</span> <span class="n">inc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="n">MemoryBuff</span> <span class="o">-=</span> <span class="mi">4096</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">tmp</span> <span class="o">+=</span> <span class="n">rinfo</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">result_count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="ce驱动机制-dbvm">CE驱动机制 DBVM</h3>
+<p>DBVM驱动允许 Cheat Engine 在 Windows 操作系统中访问和操作内核级别的内存和系统结构</p>
+<h3 id="vehhttpsenwikipediaorgwikimicrosoft-specific_exception_handling_mechanismsvectored_exception_handling"><a href="https://en.wikipedia.org/wiki/Microsoft-specific_exception_handling_mechanisms#Vectored_Exception_Handling">VEH</a></h3>
+<h3 id="x64dbghttpshelpx64dbgcomenlatest"><a href="https://help.x64dbg.com/en/latest/">x64dbg</a></h3>
+<p>仅仅是一个GUI</p>
+<h3 id="titanenginehttpsgithubcomx64dbgtitanengine"><a href="https://github.com/x64dbg/TitanEngine">TitanEngine</a></h3>
+<p>核心</p>
+<h2 id="内存扫描器">内存扫描器</h2>
+<h2 id="进程">进程</h2>
+<p>_EProcess
+Thread
+Handles
+Memory
+Modules</p>
+<p>Initialize address space</p>
+<ul>
+<li>Map KUSER_SHARED_DATA : like time&hellip;</li>
+<li>Map the executable</li>
+<li>Map ntdll.dll : similar to ld in linux</li>
+<li>Allocate PEB
+Portable Executable (PE) &mdash; ELF</li>
+<li>Sections</li>
+<li>Imports</li>
+<li>Exports</li>
+<li>Relocations</li>
+<li>AddressOfEntryPoint</li>
+<li>Subsytem</li>
+<li>&hellip;&hellip;
+DLLMain/ TLS Callbacks</li>
+<li>Notification of thread of thread start/end</li>
+<li>Used for initailization</li>
+<li>DLLS vs Executables</li>
+<li>Loader lock</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<p><a href="https://blog.haiya360.com/archives/1588.html">模仿Cheat Engine内存搜索——（Sunday算法）</a>
+<a href="https://www.bilibili.com/video/BV1ud4y1B7rW/?share_source=copy_web&amp;vd_source=a113b92ed718cca34d96624b08d107d3">内存修改器原理揭秘（上）</a>
+<a href="https://download.csdn.net/download/lyshark_csdn/87893347">csdn</a>
+<a href="https://www.lyshark.com/post/7ab1f162.html">代码</a>
+<a href="https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-readprocessmemory">ms</a>
+<a href="https://www.cnblogs.com/Leo_wl/p/3147381.html">进程基质</a>
+<a href="https://www.cnblogs.com/zjuhaohaoxuexi/p/16210800.html">32 &amp; 64</a></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code> git log --since=&#34;2009-010-24&#34; --until=&#34;2009-10-25&#34;</code></pre>
+  </figure>
+</div>
+
+    </div>
+</div>
+</article>
+
+      
+      </div>
+    </div>
+    
+    
+
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">本网站遵循</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">shenzaoyi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.3accd6de5e27d99bf8c8f71a5113bc69c672e310f9273523244dc8f0070d728e.js"
+  integrity="sha256-OszW3l4n2Zv4yPcaURO8acZy4xD5JzUjJE3I8AcNco4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.f41f5ca0007df2c47e9e7872158f93feda934e4cc9dbcbc02e471503b49d8087.js"
+  integrity="sha256-9B9coAB98sR&#43;nnhyFY&#43;T/tqTTkzJ28vALkcVA7SdgIc=">
+</script>
+<script async
+  src="/js/search-modal.bbdea845b287fc7f22a081c11a25b5bbfa96e74e43b36be5733f16439caf46be.js"
+  integrity="sha256-u96oRbKH/H8ioIHBGiW1u/qW505Ds2vlcz8WQ5yvRr4=">
+</script>
+
+    
+  </body>
+</html>
